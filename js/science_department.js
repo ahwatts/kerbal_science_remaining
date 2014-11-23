@@ -29,7 +29,7 @@ RESEARCH_DEPARTMENT = {
 }
 
 function load_new_game_save(str){
-    campaign_ksf = parse_sfs(str)
+    campaign_ksf = [ parse_sfs.parse(str) ];
     sciences = extract_completed_science(campaign_ksf)
     sciences_by_id = _.chain(sciences).map(function(x){return [x.id, x]}).object().value()
     $(document).trigger("LOADED_NEW_STUFF")
